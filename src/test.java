@@ -1,5 +1,7 @@
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
+import java.util.Objects;
+
 public class test {
     private int age;
     private String name;
@@ -24,5 +26,17 @@ public class test {
     public void setName(String name) {
         this.name = name;
     }
-    System.out.println();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        test test = (test) o;
+        return age == test.age && Objects.equals(name, test.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, name);
+    }
 }
