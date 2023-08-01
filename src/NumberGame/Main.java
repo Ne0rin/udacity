@@ -1,3 +1,5 @@
+package NumberGame;
+
 import java.util.Scanner;
 
 public class Main {
